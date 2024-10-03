@@ -14,4 +14,18 @@ This directory hosts the dataset(s) that will be used in this project. It is lik
 ### object_detection
 #### Purpose
 This directory will host the necessry files for creating an object detection model
+#### Files
+<details>
+<summary>object_detection.ipynb</summary>
+<br>
+This notebook will host the primary processes for running the model. Tasks such as data loading, data analysis, and model creation will all be handled to some degree within the cells of this notebook.
+</details>
 
+### traffic_analysis
+#### Purpose
+This directory will host the necessry files for creating a traffic analysis model
+#### Files
+<details>
+<summary>traffic_analysis.ipynb</summary>
+This notebook will host the primary processes for running the model. Tasks such as data loading, data analysis, and model creation will all be handled to some degree within the cells of this notebook.
+</details>
