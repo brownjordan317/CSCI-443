@@ -45,6 +45,7 @@ This directory will host the necessry files for creating a traffic analysis mode
 <summary>traffic_analysis.ipynb</summary>
 This notebook will host the primary processes for running the model. Tasks such as data loading, data analysis, and model creation will all be handled to some degree within the cells of this notebook.
 </details>
+</details>
 
 ## Additional Files
 <details>
