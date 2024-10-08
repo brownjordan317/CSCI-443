@@ -6,7 +6,13 @@ Growing cities and population sizes can lead to civil design needing to be updat
 ## Directories
 
 <details>
-    <summary><b>datasets</b></summary>
+    <summary>
+        <b>
+            <font size = "4">
+                datasets
+            <font size = 2>
+        </b>
+    </summary>
 
 #### Purpose
 
@@ -19,7 +25,13 @@ N/A
 
 
 <details>
-<summary><b>object_detection</b></summary>
+    <summary>
+        <b>
+            <font size = "4">
+                object_detection
+            <font size = "2">
+        </b>
+    </summary>
 
 #### Purpose
 
@@ -34,7 +46,13 @@ This notebook will host the primary processes for running the model. Tasks such 
 </details>
 
 <details>
-<summary><b>traffic_analysis</b></summary>
+    <summary>
+        <b>
+            <font size = "4">
+                traffic_analysis
+            <font size = "2">
+        </b>
+    </summary>
 
 #### Purpose
 
