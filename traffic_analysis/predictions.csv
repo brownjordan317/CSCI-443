@@ -1,4 +1,4 @@
-Time,Car Count,Truck Count,Bus Count,Motorcycle Count,Day of Week,Total
+Time,CarCount,TruckCount,BusCount,BikeCount,Day of the week,Total
 170000,29,0,0,0,Tuesday,29
 170015,23,1,0,0,Tuesday,24
 170030,24,3,0,0,Tuesday,27
