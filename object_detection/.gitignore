@@ -1,4 +1,7 @@
 dataset/
 detectron2/
 output/
+COCO/
 
+*.png
+*.mp4
