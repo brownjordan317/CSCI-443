@@ -102,7 +102,7 @@ def process_image(model, vehicle_classes, img, img_tensor, output_path, output_f
     # Add total count to the dictionary
     counts["Total"] = sum(counts.values())
     
-    return counts
+    return counts, img
     
 def get_dt_info():
     # get current time
@@ -122,7 +122,7 @@ if __name__ == "__main__":
         os.makedirs(output_path)
     model, vehicle_classes, device = load_model()
     img, img_tensor = load_tensor_img(image_path, device)
-    data = process_image(model, vehicle_classes, img, img_tensor, output_path, output_filename="test.jpg")
+    data, out_image = process_image(model, vehicle_classes, img, img_tensor, output_path, output_filename="test.jpg")
     time, day = get_dt_info()
     data["Time"] = time
     data["Day of the week"] = day
