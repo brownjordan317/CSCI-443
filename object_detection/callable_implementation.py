@@ -96,6 +96,7 @@ def process_image(model, vehicle_classes, img, img_tensor, output_path, output_f
     # Save the image with bounding boxes
     os.makedirs(output_path, exist_ok=True)
     output_file = os.path.join(output_path, os.path.basename(output_filename))
+    
     cv2.imwrite(output_file, img)
 
     # Add total count to the dictionary

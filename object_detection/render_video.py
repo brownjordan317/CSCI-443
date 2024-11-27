@@ -2,7 +2,7 @@ import os
 import subprocess
 from natsort import natsorted
 
-def images_to_video_ffmpeg(image_dir, output_video, fps=30):
+def images_to_video_ffmpeg(image_dir, output_video, fps=1):
     """
     Uses FFmpeg to convert .png images in a directory into a video.
     
@@ -51,5 +51,6 @@ def images_to_video_ffmpeg(image_dir, output_video, fps=30):
             os.rename(os.path.join(temp_dir, file), os.path.join(image_dir, file))
         os.rmdir(temp_dir)
 
-# Example usage
-images_to_video_ffmpeg("object_detection/preds_30fps", "object_detection/preds_30fps.mp4")
+if __name__ == "__main__":
+    # Example usage
+    images_to_video_ffmpeg("object_detection/preds_30fps", "object_detection/preds_30fps.mp4")
