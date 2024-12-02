@@ -137,4 +137,8 @@ if __name__ == "__main__":
     data["Time"] = time
     data["Day of the week"] = day
     write_csv(data, "test.csv")
+    
+    # send data to model
+    # returns high, nuetral, low
+    
 
