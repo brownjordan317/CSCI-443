@@ -40,11 +40,14 @@ def load_model():
 
     # Correct COCO categories for vehicles
     vehicle_classes = {
+        1: "Person",       # COCO ID for Person
+        # 17: "Cat",          # COCO ID for Cat
+        # 18: "Dog",          # COCO ID for Dog
         3: "Car",          # COCO ID for Car
         4: "Bike",         # COCO ID for Bike
         6: "Bus",          # COCO ID for Bus
         8: "Truck"         # COCO ID for Truck
-    }
+    }    
     
     return model, vehicle_classes, device
 
@@ -76,7 +79,14 @@ def process_image(model, vehicle_classes, img, img_tensor, output_path, output_f
     valid_labels = labels[mask]
     valid_scores = scores[mask]
 
-    counts = {"CarCount": 0, "BikeCount": 0, "BusCount": 0, "TruckCount": 0}
+    counts = {
+        "PersonCount": 0,
+    #           "CatCount": 0,
+    #           "DogCount": 0,
+              "CarCount": 0, 
+              "BikeCount": 0, 
+              "BusCount": 0, 
+              "TruckCount": 0}
 
     for i, box in enumerate(valid_boxes):
         xmin, ymin, xmax, ymax = map(int, box.tolist())
