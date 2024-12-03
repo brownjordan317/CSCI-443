@@ -2,7 +2,7 @@ import os
 import subprocess
 from natsort import natsorted
 
-def images_to_video_ffmpeg(image_dir, output_video, fps=1):
+def images_to_video_ffmpeg(image_dir, output_video, fps=30):
     """
     Uses FFmpeg to convert .png images in a directory into a video.
     
@@ -12,7 +12,7 @@ def images_to_video_ffmpeg(image_dir, output_video, fps=1):
         fps (int): Frames per second for the video.
     """
     # Get all .png files in the directory, sorted numerically
-    images = [f for f in os.listdir(image_dir) if f.lower().endswith(".jpg")]
+    images = [f for f in os.listdir(image_dir) if f.lower().endswith(".png")]
     images = natsorted(images)
 
     if not images:
@@ -26,14 +26,14 @@ def images_to_video_ffmpeg(image_dir, output_video, fps=1):
     # Rename files to a sequence format: 0001.png, 0002.png, ...
     for idx, img in enumerate(images):
         old_path = os.path.join(image_dir, img)
-        new_path = os.path.join(temp_dir, f"{idx:04d}.jpg")
+        new_path = os.path.join(temp_dir, f"{idx:04d}.png")
         os.rename(old_path, new_path)
 
     # Generate the video using FFmpeg
     command = [
         "ffmpeg",
         "-framerate", str(fps),
-        "-i", os.path.join(temp_dir, "%04d.jpg"),  # Input file pattern
+        "-i", os.path.join(temp_dir, "%04d.png"),  # Input file pattern
         "-c:v", "libx264",  # Codec
         "-pix_fmt", "yuv420p",  # Pixel format for compatibility
         output_video  # Output file
@@ -53,4 +53,5 @@ def images_to_video_ffmpeg(image_dir, output_video, fps=1):
 
 if __name__ == "__main__":
     # Example usage
-    images_to_video_ffmpeg("object_detection/preds_30fps", "object_detection/preds_30fps.mp4")
+    images_to_video_ffmpeg("/home/brownjordan317/fall_2024/CSCI443/Github/CSCI-443/preds_30fps_right_labeled", 
+                           "/home/brownjordan317/fall_2024/CSCI443/Github/CSCI-443/preds_30fps_right_labeled.mp4")
